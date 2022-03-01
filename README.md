@@ -1,1 +1,1 @@
-Golang RES API with Mux and POSTMAN
+Golang REST API with Mux and POSTMAN
