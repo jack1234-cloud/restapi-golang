@@ -15,6 +15,7 @@ type Book struct {
 	ID     string  `json:"id"`
 	Isbn   string  `json:"isbn"`
 	Title  string  `json:"title"`
+	Date   string  `json:"date"`
 	Author *Author `json:"author"`
 }
 
@@ -93,10 +94,10 @@ func main() {
 	router := mux.NewRouter()
 
 	//sample data
-	books = append(books, Book{ID: "1", Isbn: "5500", Title: "Book one", Author: &Author{Firstname: "Jack", Lastname: "O'Flynn"}})
-	books = append(books, Book{ID: "2", Isbn: "6500", Title: "Book two", Author: &Author{Firstname: "Eimear", Lastname: "O'Flynn"}})
-	books = append(books, Book{ID: "3", Isbn: "7500", Title: "Book three", Author: &Author{Firstname: "Ian", Lastname: "O'Flynn"}})
-	books = append(books, Book{ID: "4", Isbn: "8500", Title: "Book four", Author: &Author{Firstname: "John", Lastname: "O'Flynn"}})
+	books = append(books, Book{ID: "1", Isbn: "5500", Title: "Book one", Date: "01/01/2020", Author: &Author{Firstname: "Jack", Lastname: "O'Flynn"}})
+	books = append(books, Book{ID: "2", Isbn: "6500", Title: "Book two", Date: "02/01/2020", Author: &Author{Firstname: "Eimear", Lastname: "O'Flynn"}})
+	books = append(books, Book{ID: "3", Isbn: "7500", Title: "Book three", Date: "03/01/2020", Author: &Author{Firstname: "Ian", Lastname: "O'Flynn"}})
+	books = append(books, Book{ID: "4", Isbn: "8500", Title: "Book four", Date: "04/01/2020", Author: &Author{Firstname: "John", Lastname: "O'Flynn"}})
 
 	// route handlers
 	router.HandleFunc("/api/books", getBooks).Methods("GET")
